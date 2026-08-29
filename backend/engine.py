@@ -1,10 +1,11 @@
 import os
 import json
 import re
+from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 
-
+load_dotenv(override=True)
 def get_risk_level(score):
     """Maps a risk score to a risk level category."""
     if score <= 30:
@@ -81,10 +82,11 @@ def analyze(message):
         return data
 
     except Exception as e:
-        # import traceback
-        # with open("gemini_error.log", "w") as f:
-        #     f.write(traceback.format_exc())
-        print(f"Gemini API analysis failed: {e}")
+        import traceback
+        print("========== GEMINI ERROR ==========")
+        print(e)
+        traceback.print_exc()
+        print("==================================")
         return _rules_fallback(message)
 
 
