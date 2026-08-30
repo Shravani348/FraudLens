@@ -35,6 +35,10 @@ def index():
         "message": "Backend is up and running!"
     }), 200
 
+@app.route("/api/health", methods=["GET"])
+def health_check():
+    return jsonify({"status": "ok", "message": "API is healthy"}), 200
+
 @app.route("/api/analyze", methods=["POST", "OPTIONS"])
 def analyze_message():
     try:
