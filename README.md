@@ -85,9 +85,6 @@ safeverify/
 └── README.md
 ```
 
-## 👥 Team
-
-Built for a hackathon submission by [Shravani348](https://github.com/Shravani348) and [Anupriya Kundu](https://github.com/Amazing-Anu16).
 
 ---
 
@@ -208,10 +205,9 @@ Returns aggregate stats: total scans, high-risk count, and top scam category.
 - Multi-language support
 
 ---
-
 ## 👥 Team
 
-Built for a hackathon submission by [Shravani348](https://github.com/Shravani348) and team.
+Built for a hackathon submission by [Shravani348](https://github.com/Shravani348) and [Anupriya Kundu](https://github.com/Amazing-Anu16).
 
 ---
 
