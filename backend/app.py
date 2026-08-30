@@ -27,7 +27,15 @@ else:
     scans_collection = None
 
 
-@app.route("/api/analyze", methods=["POST"])
+@app.route("/", methods=["GET"])
+def index():
+    return jsonify({
+        "status": "online",
+        "service": "FraudLens API",
+        "message": "Backend is up and running!"
+    }), 200
+
+@app.route("/api/analyze", methods=["POST", "OPTIONS"])
 def analyze_message():
     try:
         data = request.get_json()
