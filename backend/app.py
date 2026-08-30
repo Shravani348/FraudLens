@@ -12,10 +12,8 @@ load_dotenv()
 
 app = Flask(__name__)
 
-# Configure CORS
-# Restrict FRONTEND_ORIGIN to the deployed Vercel URL in production
-frontend_origin = os.environ.get("FRONTEND_ORIGIN", "http://localhost:5173")
-CORS(app, resources={r"/api/*": {"origins": frontend_origin}})
+# Allow all origins for development to prevent CORS blocking POST requests
+CORS(app)
 
 # MongoDB Setup
 mongo_uri = os.environ.get("MONGO_URI")
