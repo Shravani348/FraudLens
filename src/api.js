@@ -279,6 +279,8 @@ export async function analyzeMessage(text) {
     throw new Error("Please enter a message to analyze.");
   }
 
+  console.log("API_BASE_URL IS:", API_BASE_URL, "| Length:", API_BASE_URL?.length);
+
   if (API_BASE_URL) {
     try {
       const response = await fetch(`${API_BASE_URL}/api/analyze`, {
@@ -296,8 +298,9 @@ export async function analyzeMessage(text) {
       const data = await response.json();
       return data;
     } catch (err) {
+      console.error("REAL FETCH ERROR:", err.name, err.message, err);
       console.warn("Live API call failed, using mock data fallback:", err.message);
-      // Fall through to mock logic below if desired, or re-throw
+      // Fall through to mock logic below
     }
   }
 
